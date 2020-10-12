@@ -1,0 +1,28 @@
+// 白天模式
+$light: (
+    /**
+     * 颜色
+     */
+    --color-primary: #4d9bcb,
+    --color-white: #ffffff,
+    --color-black: #000000,
+    --color-linear-gradient: linear-gradient(60deg, #543ab7, #00acc1),
+    --color-body-background: #ffffff,
+    --color-header-background: linear-gradient(60deg, #543ab7, #00acc1),
+
+    
+    // 辅助色
+    --color-blue: #63c4d7,
+    --color-red: #ef7d73,
+    --color-orange: #efba6e,
+    --color-purple: #9996e7,
+
+    
+    // 字体颜色
+    --color-text-primary: #303133,
+    --color-text-regular: #606266,
+    --color-text-secondary: #909399,
+    --color-text-placeholder: #c0c4cc,
+
+    --border-color: #ededed
+);

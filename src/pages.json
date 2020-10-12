@@ -1,16 +1,55 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	}
+    "easycom": {
+        "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+    },
+    "pages": [
+        //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+        {
+            "path": "pages/index/index",
+            "style": {
+                "navigationBarTitleText": "PPTer吧"
+            }
+        },
+        {
+            "path": "pages/user/index",
+            "style": {
+                "navigationBarTitleText": "个人中心"
+            }
+        },
+        {
+            "path": "pages/user/login",
+            "style": {
+                "navigationBarTitleText": "登录"
+            }
+        }
+    ],
+    "globalStyle": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "PPTer吧",
+        "navigationBarBackgroundColor": "#ffffff",
+        "backgroundColor": "#ffffff"
+    },
+    "darkmode": true,
+    "tabBar": {
+        "color": "#333333",
+        "selectedColor": "#4d9bcb",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "iconWidth": "18px",
+        "height": "60px",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "static/images/tabbar/index.png",
+                "selectedIconPath": "static/images/tabbar/index.png",
+                "text": "定制"
+            },
+            {
+                "pagePath": "pages/user/index",
+                "iconPath": "static/images/tabbar/my.png",
+                "selectedIconPath": "static/images/tabbar/my.png",
+                "text": "我的"
+            }
+        ]
+    }
 }

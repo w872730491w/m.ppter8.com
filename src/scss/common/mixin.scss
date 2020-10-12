@@ -1,0 +1,9 @@
+@mixin themed($list) {
+    @each $themename, $theme in $themes {
+        @media (prefers-color-scheme: #{$themename}) {
+            @each $key, $value in $list {
+                #{$key}: map-get($map: $theme, $key: $value);
+            }
+        }
+    }
+}

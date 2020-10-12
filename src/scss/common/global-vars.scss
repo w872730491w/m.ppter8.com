@@ -1,0 +1,168 @@
+@import "./themes/light";
+@import "./themes/dark";
+
+// 定义映射集合
+$themes: (
+    light: $light,
+    dark: $dark
+);
+
+///自定义主色,主要用在背景色
+// 深色模式-主色-红
+$_night-color-primary-red:       #b7472a !default;
+// 深色模式-主色-黑-大背景色
+$_night-color-primary-black:     #262626 !default;
+// 深色模式-主色-灰-大卡片色
+$_night-color-primary-gray:      #444444 !default;
+// 深色模式-主色-浅灰-小卡片色
+$_night-color-primary-lightgray: #666666 !default;
+// 浅色模式-主色-蓝-按钮等背景色
+$_day-color-primary-blue:        #4d9bcb !default;
+// 浅色模式-主色-蔚蓝色-表单框内用色
+$_day-color-primary-azure:       #f7fbfd !default;
+// 浅色模式-主色-紫色青色混合渐变
+$_day-color-primary-mix: linear-gradient(60deg,#543ab7,#00acc1);
+
+
+///自定义四种辅色，搭配主色，主要用在背景色
+// 辅色-青色
+$_common-color-secondary-cyan:   #63c4d7 !default;
+// 辅色-红色
+$_common-color-secondary-red:    #ef7d73 !default;
+// 辅色-橙色
+$_common-color-secondary-orange: #efba6e !default;
+// 辅色-紫色
+$_common-color-secondary-purple: #9996e7 !default;
+
+
+///基本中性色，主要用在字体颜色
+// 白色
+$_common-color-white:        #ffffff !default;
+// 黑色
+$_common-color-black:        #000000 !default;
+//深色模式-浅灰
+$_night-color-lightgray:    #e1e1e1 !default;
+//深色模式-深灰
+$_night-color-darkgray:      #b6b6b6 !default;
+//深色模式-灰色
+$_night-color-gray:          #8b8b8b !default;
+//深色模式-暗灰
+$_night-color-dimgray:       #606060 !default;
+//浅色模式-浅灰-线框用色
+$_day-color-lightgray:       #c0c4cc !default;
+//浅色模式-灰色
+$_day-color-gray:            #909399 !default;
+//浅色模式-深灰
+$_day-color-darkgray:        #606266 !default;
+//浅色模式-暗灰
+$_day-color-dimgray:         #303133 !default;
+
+
+///字体大小定义 - 字阶的选择尽量控制在 3-5 种之间，保持克制的原则 - 对应行高：字号 + 8px
+// 最小字号-需弱化、提示性字体
+$_common-size-font-12: 12upx !default;
+// 主字号
+$_common-size-font-14: 14upx !default;
+// 标题字号 - 主字号对应标题、小栏目对应标题
+$_common-size-font-16: 16upx !default;
+// 标题字号
+$_common-size-font-20: 20upx !default;
+// 大栏目字号
+$_common-size-font-24: 24upx !default;
+// 活动页、海报等场景字号
+$_common-size-font-30: 30upx !default;
+$_common-size-font-46: 46upx !default;
+$_common-size-font-56: 56upx !default;
+$_common-size-font-68: 68upx !default;
+
+
+///透明度,浅色背景下黑色字体透明度，深色背景下白色字体透明度
+// 标题-Title
+$_day-alpha-85:    0.85 !default;
+// 主要文字 - Primary text
+$_day-alpha-65:    0.65 !default;
+// 次要文字 - Secondary text
+$_day-alpha-45:    0.45 !default;
+// 禁用状态 - Disable
+$_day-alpha-25:    0.25 !default;
+// 边框 - Border
+$_day-alpha-15:    0.15 !default;
+// 分割线 - Dividers
+$_day-alpha-9:     0.09 !default;
+// 背景字体 - Background
+$_day-alpha-4:     0.04 !default;
+// 表格标题 - Table header
+$_day-alpha-2:     0.02 !default;
+// 标题-Title
+$_night-alpha-100: 1 !default;
+// 主要文字 - Primary text
+$_night-alpha-85:  0.85 !default;
+// 次要文字 - Secondary text
+$_night-alpha-65:  0.65 !default;
+// 禁用状态 - Disable
+$_night-alpha-45:  0.45 !default;
+// 边框 - Border
+$_night-alpha-25:  0.25 !default;
+// 分割线 - Dividers
+$_night-alpha-15:  0.15 !default;
+// 背景字体 - Background
+$_night-alpha-9:   0.09 !default;
+// 表格标题 - Table header
+$_night-alpha-4:   0.04 !default;
+
+
+///间距定义
+// 最小间距
+$_common-spacing-tiny:   8upx  !default;
+// 小间距 - 用于素材列表水槽宽度
+$_common-spacing-small:  16upx !default;
+// 标准间距 - 用于栏目标题
+$_common-spacing-base:   24upx !default;
+// 活动页、海报等场景标题段落间距
+$_common-spacing-large:  48upx !default;
+// 超大间距
+$_common-spacing-xlarge: 64upx !default;
+
+
+///边框弧度定义
+// 最小弧度
+$_common-radius-tiny:     2upx  !default;
+// 用于按钮弧度
+$_common-radius-small:    4upx  !default;
+// 用于小卡片
+$_common-radius-base:     6upx  !default;
+// 用户大卡片
+$_common-radius-large:    10upx !default;
+// 圆弧
+$_common-radius-circle:   50%  !default;
+
+
+///字重
+// 细体
+$_common-font-weight-light:   100 !default;
+// 常规
+$_common-font-weight-normal:  400 !default;
+// 粗体
+$_common-font-weight-bold:    700 !default;
+
+
+/// 字间距
+// 常规默认字间距
+$_common-letter-spacing-base:  0.2upx !default;
+// 用于导航、大栏目标题
+$_common-letter-spacing-large: 0.6upx !default;
+
+
+/// 过渡时间
+// 常规
+$_common-transition-time-base: 0.2s;
+// 短
+$_common-transition-time-shot: 0.1s;
+// 长
+$_common-transtion-time-long: 0.4s;
+
+
+/// 过渡方式
+// ease
+$_common-transition-mode-ease: ease;
+
