@@ -1,6 +1,28 @@
 <template>
     <view class="container">
-        <view class="user-container">
+        <view v-if="isLogin && user" class="user-container">
+            <view class="user">
+                <image
+                    class="user__avatar"
+                    mode="aspectFit"
+                    :src="user.avatar"
+                />
+                <view class="user__desc">
+                    <view class="user__nickname">{{ user.nickname }}</view>
+                    <view></view>
+                </view>
+            </view>
+            <u-button
+                @click="logout"
+                :custom-style="{ width: '100rpx' }"
+                type="primary"
+                :ripple="true"
+                size="medium"
+            >
+                退出登录
+            </u-button>
+        </view>
+        <view v-else class="user-container">
             <view class="user">
                 <image
                     class="user__avatar"
@@ -18,14 +40,23 @@
                 type="primary"
                 :ripple="true"
                 size="medium"
-                >立即登录</u-button
             >
+                立即登录
+            </u-button>
         </view>
         <div class="user__grid">
-            <u-grid :col="3" :border="false">
+            <u-grid :col="3">
                 <u-grid-item>
-                    <u-icon name="photo" :size="46"></u-icon>
-                    <view class="grid-text">图片</view>
+                    <u-icon name="edit-pen-fill" :size="46"></u-icon>
+                    <view class="grid-text">我的定制</view>
+                </u-grid-item>
+                <u-grid-item>
+                    <u-icon name="order" :size="46"></u-icon>
+                    <view class="grid-text">我的订单</view>
+                </u-grid-item>
+                <u-grid-item>
+                    <u-icon name="order" :size="46"></u-icon>
+                    <view class="grid-text">关于我们</view>
                 </u-grid-item>
             </u-grid>
         </div>
@@ -33,7 +64,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
     data() {
         return {
@@ -41,15 +72,16 @@ export default {
         };
     },
     computed: {
-        ...mapState(["isLogin"]),
+        ...mapState(["isLogin", "user"]),
     },
     onLoad() {
-        console.log(this.isLogin);
+        console.log(this.user);
     },
     methods: {
         redirectLogin() {
             uni.navigateTo({ url: "./login" });
         },
+        ...mapActions(["logout"]),
     },
 };
 </script>
@@ -81,5 +113,10 @@ export default {
         font-size: 32rpx;
         font-weight: 700;
     }
+}
+.grid-text {
+    font-size: 28rpx;
+    margin-top: 8rpx;
+    color: $_day-color-darkgray;
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
     <view class="container">
+        <image class="logo" mode="widthFix" src="/static/images/logo.png">
         <view v-show="showLogin === false">
             <u-button
                 type="primary"
@@ -17,7 +18,6 @@
                 手机号登录
             </u-button>
             <u-checkbox
-                :icon-size="32"
                 v-model="checked"
             >
                 已阅读并同意注册协议和版权声明
@@ -94,6 +94,10 @@ export default {
 
 <style lang="scss">
 .container {
-    padding: 32upx 100rpx;
+    padding: 40rpx 100rpx;
+}
+.logo {
+    width: 100%;
+    margin-bottom: 120rpx;
 }
 </style>

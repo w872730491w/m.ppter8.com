@@ -21,6 +21,12 @@
             "style": {
                 "navigationBarTitleText": "登录"
             }
+        },
+        {
+            "path": "pages/custom/form",
+            "style": {
+                "navigationBarTitleText": "定制申请"
+            }
         }
     ],
     "globalStyle": {

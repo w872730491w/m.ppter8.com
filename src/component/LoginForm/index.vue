@@ -9,7 +9,11 @@
             :border-bottom="false"
             :error-type="['toast', 'message', 'border']"
         >
-            <u-form-item class="form__item" prop="mobile" :border-bottom="false">
+            <u-form-item
+                class="form__item"
+                prop="mobile"
+                :border-bottom="false"
+            >
                 <u-input
                     placeholder="手机号"
                     v-model="form.mobile"
@@ -20,6 +24,7 @@
             </u-form-item>
             <u-form-item
                 class="form__item"
+                prop="password"
                 :border-bottom="false"
             >
                 <u-input
@@ -36,14 +41,16 @@
                     form-type="submit"
                     type="primary"
                     :ripple="true"
-                    >立即登录</u-button
                 >
+                    立即登录
+                </u-button>
             </u-form-item>
         </u-form>
     </view>
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
     data() {
         return {
@@ -65,39 +72,41 @@ export default {
                         trigger: "blur",
                     },
                 ],
-                // password: [
-                //     {
-                //         required: true,
-                //         message: "请输入密码",
-                //         trigger: "blur",
-                //     },
-                //     {
-                //         min: 6,
-                //         max: 14,
-                //         message: "密码在 6 ~ 14 位之间",
-                //         trigger: "blur",
-                //     },
-                // ],
+                password: [
+                    {
+                        required: true,
+                        message: "请输入密码",
+                        trigger: "blur",
+                    },
+                    {
+                        min: 6,
+                        max: 14,
+                        message: "密码在 6 ~ 14 位之间",
+                        trigger: "blur",
+                    },
+                ],
             },
         };
     },
     methods: {
+        ...mapActions(["logined"]),
         handleLogin() {
             this.$refs.form.validate((valid) => {
                 if (valid) {
-                    uni.request({
-                        method: "POST",
-                        url: "http://www.ppter.com/mobile/user/login",
-                        data: {
-                            ...this.form
-                        },
-                        success: res => {
-                            console.log(res)
-                        },
-                        fail: res => {
-
-                        }
-                    });
+                    this.$axios
+                        .post("/user/login", this.form)
+                        .then((res) => {
+                            this.logined({
+                                token: `${res.token_type} ${res.access_token}`,
+                            })
+                                .then(() => {
+                                    uni.navigateBack();
+                                })
+                                .catch((error) => {});
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                        });
                 }
             });
         },
@@ -105,5 +114,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

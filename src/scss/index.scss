@@ -1,0 +1,37 @@
+.view {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.swiper {
+    flex: 1;
+    &__item {
+        height: 100%;
+    }
+    &__view {
+        position: relative;
+        text-align: center;
+        color: #ffffff;
+    }
+    &__ul {
+        margin-top: 40rpx;
+        &__li {
+            font-size: 40rpx;
+            margin-bottom: 40rpx;
+        }
+    }
+    &__desc {
+        width: 60%;
+        position: absolute;
+        bottom: 40rpx;
+        left: 50%;
+        margin-left: -30%;
+        font-size: 32rpx;
+    }
+    &__btn {
+        padding: 20rpx 0;
+        text-align: center;
+        font-size: 32rpx;
+    }
+}
