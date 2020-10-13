@@ -23,6 +23,12 @@
             }
         },
         {
+            "path": "pages/custom/index",
+            "style": {
+                "navigationBarTitleText": "定制"
+            }
+        },
+        {
             "path": "pages/custom/form",
             "style": {
                 "navigationBarTitleText": "定制申请"
@@ -46,6 +52,12 @@
         "list": [
             {
                 "pagePath": "pages/index/index",
+                "iconPath": "static/images/tabbar/index.png",
+                "selectedIconPath": "static/images/tabbar/index.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/custom/index",
                 "iconPath": "static/images/tabbar/index.png",
                 "selectedIconPath": "static/images/tabbar/index.png",
                 "text": "定制"

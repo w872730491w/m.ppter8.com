@@ -66,8 +66,7 @@ export default {
                         trigger: "blur",
                     },
                     {
-                        min: 11,
-                        max: 11,
+                        len: 11,
                         message: "手机号格式不正确",
                         trigger: "blur",
                     },
